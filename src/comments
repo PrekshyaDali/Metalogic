@@ -1,0 +1,7 @@
+   <div className="flex justify-center items-center h-screen">
+      <div className="relative">
+        <div className="w-16 h-16 bg-blue-500 rounded-full animate-bubble absolute "></div>
+        <div className="w-12 h-12 bg-blue-500 rounded-full animate-bubble absolute"></div>
+        <div className="w-8 h-8 bg-blue-500 rounded-full animate-bubble absolute"></div>
+      </div>
+    </div>
