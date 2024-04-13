@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="fixed bottom-0 z-40 bg-blue-950 h-fit w-full text-white pt-24 px-10 md:px-16 pb-20 flex flex-col space-y-5  lg:flex-row  lg:space-y-0 lg:justify-between">
+    <footer className=" bottom-0 z-40 bg-blue-950 h-fit w-full text-white pt-24 px-10 md:px-16 pb-20 flex flex-col space-y-5  lg:flex-row  lg:space-y-0 lg:justify-between">
       {/* left side of the footer */}
       <div className="w-fit flex flex-col justify-between">
-        <div className = "">
+        <div className="">
           <div className="relative border-2">
             <img className="object-contain" src="/img/Logo.png" alt="" />
             <p className="absolute text-sm right-24 bottom-4">
@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className = "flex ">
+        <div className="flex ">
           <p>
             &copy; Copyright 2024 MetaLogic.{" "}
             <span className="text-red-500">All rights reserved</span>
@@ -72,14 +72,23 @@ export default function Footer() {
       {/* right side of the footer */}
 
       <div>
-        <h3>Join us on Social Medias</h3>
-        <div className="gap-3">
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+        <h3 className="mb-2">Join us on Social Medias</h3>
+
+        <div className="flex gap-3">
+          <div className="h-10 border-2 w-10 p-2 rounded-full  ">
+            <img className="object-cover" src="/img/whatsapp.png" alt="" />
+          </div>
+          <div className="h-10 border-2 w-10 rounded-full p-2  ">
+            <img className="object-cover" src="/img/facebook.png" alt="" />
+          </div>{" "}
+          <div className="h-10 border-2 w-10 rounded-full p-2 ">
+            <img className="object-cover" src="/img/instagram.png" alt="" />
+          </div>{" "}
+          <div className="h-10 border-2 w-10 rounded-full p-2 ">
+            <img className="object-cover" src="/img/linkedin.png" alt="" />
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
