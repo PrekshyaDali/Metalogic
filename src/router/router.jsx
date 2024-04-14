@@ -1,9 +1,9 @@
 // AppRouter.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "../Layout/Layout"
-import Hero from "../Carrer/Home";
-import Home from "../Carrer/Home";
+import Layout from "../Layout/Layout";
+
+import Home from "../Sections/Home";
 
 export default function AppRouter() {
   return (
@@ -11,7 +11,6 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-
         </Route>
       </Routes>
     </Router>
