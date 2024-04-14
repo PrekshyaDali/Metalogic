@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "../components/Button";
 import HamburgerMenu from "./HamburgerMenu";
 
-
 export default function NavBar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const navItems = [
@@ -19,17 +18,17 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="fixed bg-pink-200 hidden lg:visible w-full top-0 z-50 h-16 bg-transparent backdrop-blur-md  border-2 pl-3 pr-3 items-center lg:flex lg:justify-between">
+      <nav className="fixed bg-pink-200 hidden lg:visible w-full top-0 z-50 h-16 bg-transparent backdrop-blur-md border-b-2 border-translucent-light-100 pl-3 pr-3 items-center lg:flex lg:justify-between">
         <div className="h-16 w-56">
           <img className="object-contain" src="/img/Logo.png" alt="" />
         </div>
         <div>
-          <ul className="flex space-x-8 font-medium text-[17px]">
+          <ul className="flex space-x-8 font-semibold text-[17px]">
             {navItems.map((item, index) => (
               <li
                 key={index}
                 name={item.name}
-                className="cursor-pointer hover:text-purple-800 focus-visible:text-purple-900"
+                className="cursor-pointer box-content transition duration-500 hover:border-red-600 hover:border-b-4 border-b-4 border-transparent"
               >
                 {item.name}
               </li>
