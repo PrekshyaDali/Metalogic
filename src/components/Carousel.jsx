@@ -1,17 +1,31 @@
-import React from "react";
-import {Pagination, Navigation,  Scrollbar, A11y } from "swiper/modules";
-import {Swiper, SwiperSlide} from "swiper/react";
-import 'swiper/css'
+import { useEffect, useState } from "react";
+
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+export default function Carousel(props) {
+  const [isSwiperReady, setIsSwiperReady] = useState(false);
 
-export default function Carousel() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsSwiperReady(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isSwiperReady) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
+      spaceBetween={2}
       slidesPerView={3}
       navigation
       pagination={{ clickable: true }}
@@ -19,13 +33,19 @@ export default function Carousel() {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
+      {props.slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <div className="bg-white shadow-md p-5 h-44 w-72 flex flex-col space-y-5 rounded-2xl opacity-65">
+            <div>
+              <img src={slide.img} alt="" />
+            </div>
+            <div>
+              <h2 className="text-xl">{slide.title}</h2>
+              <p>{slide.description}</p>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
