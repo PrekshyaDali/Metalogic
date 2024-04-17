@@ -52,7 +52,7 @@ export default function Environment() {
                   alt=""
                 />
               </div>
-              <h3 className="font-bold ">{item.title}</h3>
+              <h3 className="font-bold text-center ">{item.title}</h3>
             </div>
           ))}
         </div>

@@ -35,7 +35,7 @@ export default function Layout({ children }) {
           />
         )}
         <NavBar />
-        <main className="mt-0 lg:mt-16">
+        <main className="mt-0">
           <Outlet />
         </main>
         <Footer />

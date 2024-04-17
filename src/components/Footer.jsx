@@ -7,11 +7,12 @@ export default function Footer() {
       {/* left side of the footer */}
       <div className="w-fit flex flex-col justify-between">
         <div className="">
-          <div className="relative border-2">
-            <img className="object-contain" src="/img/Logo.png" alt="" />
-            <p className="absolute text-sm right-24 bottom-4">
-              Software Private Limited
-            </p>
+          <div className="relative border-2 ">
+            <div className = "flex">
+              <img className="object-contain" src="/img/logowhite.png" alt="" />
+              <h2>Metalogic</h2>
+            </div>
+            <p className="text-ms absolute right-2">Software Private Limited</p>
           </div>
           <div>
             <img src="" alt="" />

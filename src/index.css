@@ -9,13 +9,17 @@
   }
   50% {
     transform: scale(1.5);
-    opacity: 0.7;
+    opacity: 0.4;
+   
     
   }
   100% {
     transform: scale(0);
     opacity: 0;
   }
+}
+.animate-bubble {
+  animation: bubbleAnimation 5s ease-out infinite;  
 }
 
 @keyframes slideIn {
@@ -44,8 +48,34 @@
   animation: slideOut 0.3s ease-in-out forwards;
 }
 
-.animate-bubble {
-  animation: bubbleAnimation 3s ease-out infinite;
+
+
+
+
+@keyframes fly {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(150%) translateY(-100%);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-fly {
+  animation: fly 5s linear infinite;
+}
+
+.animate-disappear {
+  animation: disappear 2s linear forwards;
 }
 
 

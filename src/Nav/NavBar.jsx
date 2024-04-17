@@ -45,7 +45,7 @@ export default function NavBar() {
                 <li
                   key={index}
                   name={item.name}
-                  className="cursor-pointer box-content transition duration-500 hover:border-red-600 hover:border-b-4 border-b-4 border-transparent"
+                  className="cursor-pointer box-content transition duration-500 hover:border-red-600 hover:border-b-4 border-b-4 border-transparent "
                 >
                   {item.name}
                 </li>

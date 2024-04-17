@@ -6,6 +6,7 @@ import Benifits from "./Benifits";
 import Subscibe from "./Subscibe";
 import Environment from "./Environment";
 import MetaTag from "../components/MetaTag";
+import Opportunities from "./Opportunities";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Demo />
       <Benifits />
       <Environment />
+      <Opportunities/>
       <Subscibe />
     </div>
   );
