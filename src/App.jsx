@@ -7,12 +7,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./Nav/NavBar";
 import Footer from "./components/Footer";
 import GlobalStyles from "./GlobalStyles";
+import MetaTag from "./components/MetaTag";
 
 
 function App() {
   return (
     <>
       <Router>
+        
+
         <GlobalStyles></GlobalStyles>
       </Router>
     </>

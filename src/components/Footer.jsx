@@ -1,5 +1,6 @@
 import React from "react";
-
+import MetaTag from "./MetaTag";
+import HoverMetaTag from "./HoverMetaTag";
 export default function Footer() {
   return (
     <footer className=" bottom-0 z-40 bg-blue-950 h-fit w-full text-white pt-24 px-10 md:px-16 pb-20 flex flex-col space-y-5  lg:flex-row  lg:space-y-0 lg:justify-between">
@@ -49,7 +50,17 @@ export default function Footer() {
           <h3 className="mb-2">Services</h3>
           <div className="text-xs space-y-1">
             <p>Custom Software Development</p>
-            <p>Web Development</p>
+
+            <p>
+              <MetaTag
+                title="MetaLogic Careers Page"
+                description="Explore different Career opportunities in MetaLogic Software Pvt. Ltd."
+                keywords="web development, responsive design, custom website, web application"
+                url="https://metalogic.com.np/careers"
+                image="https://metalogic.com.np/meta-image.jpg"
+              />
+              WebDevelopment
+            </p>
             <p>Mobile App Development</p>
             <p>Cloud Computing Services</p>
             <p>Quality Assurance and Testing</p>
