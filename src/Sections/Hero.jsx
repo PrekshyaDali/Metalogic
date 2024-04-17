@@ -16,9 +16,6 @@ export default function Hero() {
       </Helmet>
       <Plane className="absolute z-0"></Plane>
 
-      <Bubbles className="absolute z-0"></Bubbles>
-      <Bubbles className="absolute z-0 bottom-10 left-80"></Bubbles>
-
       <div className="flex flex-col items-center justify-center w-4/5 space-y-10 px-auto md:px-32 ">
         <h3>Careers</h3>
         <h1 className="text-center">
