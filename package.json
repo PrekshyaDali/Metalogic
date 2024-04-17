@@ -17,7 +17,10 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.22.3",
     "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.2",
     "react-swiper": "^0.1.5",
+    "react-toastify": "^10.0.5",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.8",
     "swiper": "^11.1.1"
   },

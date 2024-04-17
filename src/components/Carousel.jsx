@@ -1,106 +1,98 @@
-import { useEffect, useState } from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+// Custom styles for arrows
+const arrowStyles = {
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  zIndex: 1,
+  cursor: "pointer",
+  color: "#000",
+  fontSize: "24px",
+  fontWeight: "bold",
+  padding: "0 10px",
+  background: "rgba(255, 255, 255, 0.5)",
+  borderRadius: "50%",
+};
+
+// Custom NextArrow component
+const NextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div style={{ ...arrowStyles, right: "15px" }} onClick={onClick}>
+      &#10095;
+    </div>
+  );
+};
+
+// Custom PrevArrow component
+const PrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div style={{ ...arrowStyles, left: "15px", zIndex: 2 }} onClick={onClick}>
+      <div
+        style={{
+          width: "30px",
+          height: "30px",
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          background: "rgba(255, 255, 255, 0.5)",
+        }}
+      >
+        &#10094;
+      </div>
+    </div>
+  );
+};
 
 export default function Carousel(props) {
-  const [isSwiperReady, setIsSwiperReady] = useState(false);
-  const [slidesPerView, setSlidesPerView] = useState(2); // Initial slides per view
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsSwiperReady(true);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Update slides per view when screen size changes
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesPerView(window.innerWidth >= 1024 ? 3: 1);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleSwiperInstance = (swiper) => {
-    if (
-      !swiper ||
-      !swiper.navigation ||
-      !swiper.navigation.$prevEl ||
-      !swiper.navigation.$nextEl
-    ) {
-      return;
-    }
-
-    // Apply custom styles to the navigation buttons
-    swiper.navigation.$el.classList.add("swiper-buttons-container");
-    const prevButton = swiper.navigation.$prevEl;
-    const nextButton = swiper.navigation.$nextEl;
-
-    // Apply custom styles to the navigation buttons
-    if (prevButton) {
-      prevButton.classList.add("swiper-button", "swiper-button-prev");
-    }
-    if (nextButton) {
-      nextButton.classList.add("swiper-button", "swiper-button-next");
-    }
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          arrows: false, // Hide arrows on smaller screens
+        },
+      },
+    ],
   };
 
-  if (!isSwiperReady) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="relative">
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={2}
-        slidesPerView={slidesPerView} // Use dynamic slides per view
-        navigation
-        pagination={{
-          clickable: true,
-          el: ".swiper-pagination",
-          bulletClass:
-            "swiper-pagination-bullet rounded-full w-3 h-3 bg-gray-400 mr-2",
-          bulletActiveClass: "bg-blue-500",
-          renderBullet: (index, className) => {
-            return `<span class="${className}"></span>`;
-          },
-        }}
-        scrollbar={{
-          draggable: true,
-          el: ".swiper-scrollbar",
-        }}
-        onSwiper={handleSwiperInstance}
-        onSlideChange={() => console.log("slide change")}
-        className="overflow-hidden relative"
-      >
-        {props.slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="bg-white shadow-md p-5 h-44 w-72 flex flex-col space-y-5 mb-8 rounded-2xl opacity-65">
-              <div>
-                <img src={slide.img} alt="" />
-              </div>
-              <div>
-                <h2 className="text-xl">{slide.title}</h2>
-                <p>{slide.description}</p>
-              </div>
+    <Slider {...settings}>
+      {props.slides.map((slide, index) => (
+        <div className="px-3" key={index}>
+          {" "}
+          {/* Add padding for responsiveness */}
+          <div className="bg-white shadow-md p-5 h-fit max-h-64 max-w-full w-fit flex flex-col space-y-5 mb-8 rounded-2xl opacity-65 hover:scale-105 transition-transform duration-300">
+            <div>
+              <img src={slide.img} alt="" />
             </div>
-          </SwiperSlide>
-        ))}
-        <div className="swiper-pagination absolute bottom-0 left-0 right-0 z-10 flex justify-center mt-4"></div>
-        <div className="swiper-buttons-container bg-blue-300 absolute bottom-4 left-0 right-0 flex justify-center"></div>
-      </Swiper>
-    </div>
+            <div>
+              <h2 className="text-xl">{slide.title}</h2>
+              <p>{slide.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </Slider>
   );
 }

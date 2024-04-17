@@ -1,18 +1,25 @@
 import React from "react";
 import MetaTag from "./MetaTag";
 import HoverMetaTag from "./HoverMetaTag";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
-    <footer className=" bottom-0 z-40 bg-blue-950 h-fit w-full text-white pt-24 px-10 md:px-16 pb-20 flex flex-col space-y-5  lg:flex-row  lg:space-y-0 lg:justify-between">
+    <footer className="relative bottom-0 z-40 bg-blue-950 h-fit w-full text-white pt-24 px-10 md:px-16 pb-20 flex flex-col space-y-5  lg:flex-row  lg:space-y-0 lg:justify-between">
       {/* left side of the footer */}
       <div className="w-fit flex flex-col justify-between">
         <div className="">
-          <div className="relative border-2 ">
-            <div className = "flex">
-              <img className="object-contain" src="/img/logowhite.png" alt="" />
+          <div className="relative mb-3 ">
+            <div className="flex h-16 w-fit ">
+              <img
+                className="object-contain w-16"
+                src="/img/logowhite.png"
+                alt=""
+              />
               <h2>Metalogic</h2>
             </div>
-            <p className="text-ms absolute right-2">Software Private Limited</p>
+            <div className="absolute left-16 bottom-1">
+              <p className="text-sm ">Software Private Limited</p>
+            </div>
           </div>
           <div>
             <img src="" alt="" />
@@ -28,8 +35,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex ">
-          <p>
+        <div className="flex absolute bottom-5 ">
+          <p className="text-sm">
             &copy; Copyright 2024 MetaLogic.{" "}
             <span className="text-red-500">All rights reserved</span>
           </p>
@@ -52,16 +59,8 @@ export default function Footer() {
           <div className="text-xs space-y-1">
             <p>Custom Software Development</p>
 
-            <p>
-              <MetaTag
-                title="MetaLogic Careers Page"
-                description="Explore different Career opportunities in MetaLogic Software Pvt. Ltd."
-                keywords="web development, responsive design, custom website, web application"
-                url="https://metalogic.com.np/careers"
-                image="https://metalogic.com.np/meta-image.jpg"
-              />
-              WebDevelopment
-            </p>
+            <p>WebDevelopment</p>
+
             <p>Mobile App Development</p>
             <p>Cloud Computing Services</p>
             <p>Quality Assurance and Testing</p>
