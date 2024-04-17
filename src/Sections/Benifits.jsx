@@ -24,7 +24,7 @@ export default function () {
         "With no inner circle… absolutely everyone has the same opportunity to thrive.",
     },
     {
-      img: "/benifits/makeyourselfheard.png",
+      img: "/benifits/makeyouselfheard.png",
       title: "Make Yourself Heard",
       description:
         "We encourage diverse perspectives - making it count in achieving our collective goals.",

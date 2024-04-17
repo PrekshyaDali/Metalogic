@@ -18,6 +18,32 @@
   }
 }
 
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.transition-slide-in {
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.transition-slide-out {
+  animation: slideOut 0.3s ease-in-out forwards;
+}
+
 .animate-bubble {
   animation: bubbleAnimation 3s ease-out infinite;
 }

@@ -51,7 +51,16 @@ export default function Footer() {
           <div className="text-xs space-y-1">
             <p>Custom Software Development</p>
 
-            <p>WebDevelopment</p>
+            <p>
+              <MetaTag
+                title="MetaLogic Careers Page"
+                description="Explore different Career opportunities in MetaLogic Software Pvt. Ltd."
+                keywords="web development, responsive design, custom website, web application"
+                url="https://metalogic.com.np/careers"
+                image="https://metalogic.com.np/meta-image.jpg"
+              />
+              WebDevelopment
+            </p>
             <p>Mobile App Development</p>
             <p>Cloud Computing Services</p>
             <p>Quality Assurance and Testing</p>
