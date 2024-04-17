@@ -58,7 +58,7 @@ export default function () {
   ];
 
   return (
-    <div className="bg-white h-[80vh] px-40 flex flex-col space-y-8 justify-center items-center border-2">
+    <div className="bg-white h-[80vh] sm:px-20 md:px-40 flex flex-col space-y-8 justify-center items-center border-2">
       <div>
         <h3 className="text-red-500">Benifits</h3>
         <h2>Life at Metalogic</h2>

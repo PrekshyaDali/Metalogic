@@ -8,6 +8,7 @@ import "swiper/css/scrollbar";
 
 export default function Carousel(props) {
   const [isSwiperReady, setIsSwiperReady] = useState(false);
+  const [slidesPerView, setSlidesPerView] = useState(2); // Initial slides per view
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,6 +16,20 @@ export default function Carousel(props) {
     }, 500);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Update slides per view when screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerView(window.innerWidth >= 1024 ? 3: 1);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const handleSwiperInstance = (swiper) => {
@@ -50,7 +65,7 @@ export default function Carousel(props) {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={2}
-        slidesPerView={3}
+        slidesPerView={slidesPerView} // Use dynamic slides per view
         navigation
         pagination={{
           clickable: true,
