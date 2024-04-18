@@ -24,7 +24,7 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <div className="flex flex-col bg-[#D9D9D9]">
+      <div className="flex flex-col bg-[#D9D9D9] w-full">
         {currentPageMetadata && (
           <MetaTag
             title={currentPageMetadata.title}
