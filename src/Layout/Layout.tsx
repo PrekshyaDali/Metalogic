@@ -3,6 +3,7 @@ import NavBar from "../Nav/NavBar";
 import Footer from "../components/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import MetaTag from "../components/MetaTag";
+import { ToastContainer } from "react-toastify";
 
 export default function Layout({ children }) {
   const location = useLocation();
@@ -25,15 +26,7 @@ export default function Layout({ children }) {
   return (
     <>
       <div className="flex flex-col bg-[#D9D9D9] w-full">
-        {currentPageMetadata && (
-          <MetaTag
-            title={currentPageMetadata.title}
-            description={currentPageMetadata.description}
-            keywords={currentPageMetadata.keywords}
-            url={currentPageMetadata.url}
-            image={currentPageMetadata.image}
-          />
-        )}
+        <ToastContainer></ToastContainer>
         <NavBar />
         <main className="mt-0">
           <Outlet />

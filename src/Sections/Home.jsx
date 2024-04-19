@@ -10,7 +10,7 @@ import Opportunities from "./Opportunities";
 
 export default function Home() {
   return (
-    <div className="pt-32 pb-32">
+    <div className="pt-32 pb-32 w-full">
       <MetaTag
         title="MetaLogic Careers Page"
         description="Explore different Career opportunities in MetaLogic Software Pvt. Ltd."
