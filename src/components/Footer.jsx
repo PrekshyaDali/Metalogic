@@ -1,6 +1,5 @@
 import React from "react";
-import MetaTag from "./MetaTag";
-import HoverMetaTag from "./HoverMetaTag";
+
 import { Link } from "react-router-dom";
 export default function Footer() {
   return (
