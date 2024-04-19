@@ -21,8 +21,6 @@ export default function ContactFormModal({ showModal, setShowModal }) {
     e.preventDefault();
 
     console.log(formData);
-
-    // Clear form data
     setFormData({
       name: "",
       email: "",
@@ -39,7 +37,6 @@ export default function ContactFormModal({ showModal, setShowModal }) {
       progress: undefined,
     });
 
-    // Close the modal
   };
 
   return (
@@ -48,7 +45,6 @@ export default function ContactFormModal({ showModal, setShowModal }) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
           <div className="bg-white rounded-lg p-8 w-96">
             <div className="flex justify-end">
-              {/* Close button */}
               <button
                 onClick={() => setShowModal(false)}
                 className="text-gray-600 hover:text-gray-800"
