@@ -20,7 +20,6 @@ export default function NavBar() {
   };
 
   useEffect(() => {
-    // Close the hamburger menu when screen size exceeds lg breakpoint
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         setIsHamburgerOpen(false);
@@ -33,6 +32,11 @@ export default function NavBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+
+  const getInTouchButton = (
+    <Button onClick={() => setShowModal(true)} name="Get in Touch" />
+  );
 
   return (
     <>
@@ -56,14 +60,12 @@ export default function NavBar() {
                   >
                     {item.name}
                   </li>
+                  
                 ))}
               </ul>
             </div>
             <div>
-              <Button
-                onClick={() => setShowModal(true)}
-                name="Get in Touch"
-              ></Button>
+              {getInTouchButton} 
             </div>
           </nav>
         </Headroom>
@@ -79,6 +81,7 @@ export default function NavBar() {
           setIsHamburgerOpen={setIsHamburgerOpen}
           navItems={navItems}
           isOpen={isHamburgerOpen}
+          getInTouchButton={getInTouchButton} 
         />
       )}
       {showModal && (

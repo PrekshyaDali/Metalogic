@@ -28,7 +28,7 @@ export default function HamburgerMenu(props) {
           onClick={closeHandler}
         />
       </div>
-      <div className="flex justify-center items-center h-full">
+      <div className="flex flex-col justify-center items-center h-full">
         <div>
           <ul className="text-black font-semibold flex flex-col space-y-8">
             {props.navItems.map((item, index) => {
@@ -42,6 +42,9 @@ export default function HamburgerMenu(props) {
               );
             })}
           </ul>
+        </div>
+        <div className = "mt-8">
+          {props.getInTouchButton}
         </div>
       </div>
     </div>
