@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactFormModal({ showModal, setShowModal }) {
   const [formData, setFormData] = useState({
@@ -31,7 +30,13 @@ export default function ContactFormModal({ showModal, setShowModal }) {
     });
     setShowModal(false);
     toast.success("Message sent successfully!", {
-      position: toast.POSITION.BOTTOM_RIGHT, // Correct property name
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
     });
 
     // Close the modal
@@ -106,7 +111,6 @@ export default function ContactFormModal({ showModal, setShowModal }) {
           </div>
         </div>
       )}
-      <ToastContainer /> {/* Add ToastContainer component outside the modal */}
     </div>
   );
 }

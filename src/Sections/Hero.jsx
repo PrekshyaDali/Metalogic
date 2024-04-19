@@ -7,13 +7,6 @@ import { Link } from "react-scroll";
 export default function Hero() {
   return (
     <div className=" relative h-fit px-3 sm:px-20 md:px-40 flex items-center justify-center mb-20 ">
-      <Helmet>
-        <title>Explore</title>
-        <meta
-          property="og:description"
-          content="Explore the vacancies in Metalogy"
-        />
-      </Helmet>
       <Plane className="absolute z-0"></Plane>
 
       <div className="flex flex-col items-center justify-center w-4/5 space-y-10 px-auto md:px-32 ">
