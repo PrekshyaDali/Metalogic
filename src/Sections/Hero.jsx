@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Plane from "../components/Plane";
-import Bubbles from "../components/Bubbles";
+
 import { Link } from "react-scroll";
 
 export default function Hero() {
