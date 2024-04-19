@@ -7,7 +7,7 @@ export default function HamburgerMenu(props) {
     setIsClosing(true);
     setTimeout(() => {
       props.setIsHamburgerOpen(false);
-    }, 300); 
+    }, 300);
   };
 
   return (
@@ -22,7 +22,7 @@ export default function HamburgerMenu(props) {
     >
       <div className="absolute top-3 right-3">
         <img
-          className="h-6"
+          className="h-6 cursor-pointer"
           src="/img/close.png"
           alt=""
           onClick={closeHandler}

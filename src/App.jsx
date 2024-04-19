@@ -8,15 +8,14 @@ import NavBar from "./Nav/NavBar";
 import Footer from "./components/Footer";
 import GlobalStyles from "./GlobalStyles";
 import MetaTag from "./components/MetaTag";
-
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
       <Router>
-        
-
         <GlobalStyles></GlobalStyles>
+        <ToastContainer/>
       </Router>
     </>
   );

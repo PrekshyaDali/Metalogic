@@ -36,9 +36,9 @@ export default function NavBar() {
 
   return (
     <>
-      <div className = "relative">
+      <div className="relative w-full">
         <Headroom style={{ width: "100%" }} downTolerance={10} upTolerance={10}>
-          <nav className="bg-pink-200 hidden lg:visible w-full top-0 z-50 h-16 bg-transparent backdrop-blur-md border-b-2 border-gray-300 pl-3 pr-3 items-center lg:flex lg:justify-between">
+          <nav className="bg-pink-200 hidden lg:visible  top-0 z-50 h-16 bg-transparent backdrop-blur-md border-b-2 border-gray-300 pl-3 pr-3 items-center lg:flex lg:justify-between">
             <div className="h-16">
               <img
                 className="object-contain h-full"
