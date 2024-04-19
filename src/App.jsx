@@ -15,7 +15,7 @@ function App() {
     <>
       <Router>
         <GlobalStyles></GlobalStyles>
-        <ToastContainer/>
+      
       </Router>
     </>
   );
