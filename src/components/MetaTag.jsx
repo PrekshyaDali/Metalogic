@@ -10,7 +10,7 @@ export default function MetaTag() {
     image,
     type = "website",
   }) => {
-    const [showTooltip, setShowTooltip] = useState(false);
+
 
     return (
       <>
@@ -24,22 +24,7 @@ export default function MetaTag() {
           <meta property="og:url" content={url} />
           <meta property="og:image" content={image} />
         </Helmet>
-
-        {/* Tooltip in the footer */}
-        <div className="tooltip-container inline-block relative">
-          <span
-            className="tooltip-trigger cursor-pointer"
-            onMouseEnter={() => setShowTooltip(true)}
-            onMouseLeave={() => setShowTooltip(false)}
-          >
-            Hover for Description
-          </span>
-          {showTooltip && (
-            <div className="tooltip bg-gray-800 text-white text-center py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2 z-10">
-              <p>{description}</p>
-            </div>
-          )}
-        </div>
+\
       </>
     );
   };

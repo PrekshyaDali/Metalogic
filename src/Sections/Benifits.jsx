@@ -54,7 +54,7 @@ export default function () {
         "We encourage you to strive, push the limits and achieve your dreams by being best you can be.",
     },
 
-    // Add more slide objects as needed
+   
   ];
 
   return (

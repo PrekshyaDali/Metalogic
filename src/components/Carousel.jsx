@@ -81,7 +81,6 @@ export default function Carousel(props) {
       {props.slides.map((slide, index) => (
         <div className="px-3" key={index}>
           {" "}
-          {/* Add padding for responsiveness */}
           <div className="bg-white shadow-md p-5 h-fit md:h-56 max-w-full w-fit flex flex-col space-y-5 mb-8 rounded-2xl opacity-65 hover:scale-105 transition-transform duration-300">
             <div>
               <img src={slide.img} alt="" />

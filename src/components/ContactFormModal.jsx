@@ -19,7 +19,6 @@ export default function ContactFormModal({ showModal, setShowModal }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log(formData);
     setFormData({
       name: "",

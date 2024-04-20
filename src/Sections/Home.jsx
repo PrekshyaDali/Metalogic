@@ -18,7 +18,6 @@ export default function Home() {
         url="https://metalogic.com.np/careers"
         image="https://metalogic.com.np/meta-image.jpg"
       />
-
       <Hero />
       <Demo />
       <Benifits />

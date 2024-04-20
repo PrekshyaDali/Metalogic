@@ -9,7 +9,7 @@ const Vacancies = () => {
       status: "Closed",
     },
     {
-      title: "Marketing Executive",
+      title: "Marketing Executive" ,
       type: "Full Time",
       location: "Nepal (with potential for international travel)",
       status: "Apply",
